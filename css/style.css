@@ -11,11 +11,21 @@
   --border: rgba(255, 255, 255, 0.10);
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   --radius: 16px;
-  --max: 1050px;
+  --max: 900px; /* limit content width for better readability */
+  --gutter: 1.125rem;
+  --base-font: 18px;
+  --base-line-height: 1.6;
+  --heading-line-height: 1.15;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  font-size: var(--base-font);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -23,7 +33,7 @@ body {
               radial-gradient(900px 450px at 90% 10%, rgba(122,162,255,0.18), transparent),
               var(--bg);
   color: var(--text);
-  line-height: 1.55;
+  line-height: var(--base-line-height);
 }
 
 a { color: inherit; text-decoration: none; }
@@ -33,6 +43,8 @@ img { max-width: 100%; display: block; }
 .container {
   width: min(100% - 32px, var(--max));
   margin: 0 auto;
+  padding-left: calc(var(--gutter) * 1.25);
+  padding-right: calc(var(--gutter) * 1.25);
 }
 
 .muted { color: var(--muted); }
@@ -101,7 +113,7 @@ img { max-width: 100%; display: block; }
    Sections
 ========= */
 .section {
-  padding: 30px 0;
+  padding: 2rem 0;
 }
 
 .section-head {
@@ -112,11 +124,11 @@ img { max-width: 100%; display: block; }
 
 .section h2 {
   margin: 0;
-  font-size: 28px;
+  font-size: 1.375rem;
 }
 
 .hero {
-  padding: 56px 0 24px;
+  padding: 48px 0 20px;
 }
 
 .hero-grid {
@@ -128,8 +140,55 @@ img { max-width: 100%; display: block; }
 
 .hero-content h1 {
   margin: 0 0 10px;
-  font-size: 40px;
-  line-height: 1.1;
+  font-size: 2.25rem;
+  line-height: var(--heading-line-height);
+}
+
+/* Tighter vertical rhythm between sections */
+.section + .section {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Heading scale and spacing */
+h1 {
+  font-size: 2.25rem;
+  line-height: var(--heading-line-height);
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 1.375rem;
+  line-height: 1.2;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+h3 {
+  font-size: 1.125rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+p {
+  margin: 0 0 1rem 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Reset top margins for headings to enforce consistent rhythm */
+h1,h2,h3,h4,h5,h6 { margin-top: 0; }
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  :root { --base-font: 16px; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.125rem; }
+  .container { padding-left: 1rem; padding-right: 1rem; }
 }
 
 .subtitle {
