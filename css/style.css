@@ -3,19 +3,19 @@
 ========= */
 
 :root {
-  /* Color system (dark background) */
-  --color-bg: #000000; /* page background */
-  --color-surface: #0B1220; /* cards, panels (dark) */
-  --color-primary: #6EA8FF; /* headings, links (lightened for dark BG) */
-  --color-secondary: #66B2BF; /* supporting UI */
+  /* Color system */
+  --color-bg: #F6F8FA; /* page background */
+  --color-surface: #FFFFFF; /* cards, panels */
+  --color-primary: #0B3D91; /* headings, links */
+  --color-secondary: #2F6B7A; /* supporting UI */
   --color-accent: #FFB020; /* primary CTA / highlights */
-  --color-text: rgb(6, 6, 6); /* primary body text (light) */
-  --color-muted: #9AA6B0; /* secondary text (muted light) */
-  --color-on-accent: #0B1220; /* text used on accent backgrounds */
+  --color-text: #0B1A2B; /* primary body text */
+  --color-muted: #5B6B73; /* secondary text */
+  --color-on-accent: #0B1A2B; /* text used on accent backgrounds */
 
   /* UI tokens */
-  --border: rgba(255, 255, 255, 0.06);
-  --shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+  --border: rgba(11, 26, 43, 0.06);
+  --shadow: 0 8px 24px rgba(11, 26, 43, 0.06);
   --radius: 12px;
 
   /* layout & typography */
@@ -37,8 +37,8 @@ html {
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(900px 450px at 30% -10%, rgba(110,168,255,0.06), transparent),
-              radial-gradient(900px 450px at 90% 10%, rgba(102,178,191,0.04), transparent),
+  background: radial-gradient(900px 450px at 30% -10%, rgba(11,61,145,0.06), transparent),
+              radial-gradient(900px 450px at 90% 10%, rgba(47,107,122,0.04), transparent),
               var(--color-bg);
   color: var(--color-text);
   line-height: var(--base-line-height);
