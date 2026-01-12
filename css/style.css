@@ -4,8 +4,8 @@
 
 :root {
   /* Color system */
-  --color-bg: #F6F8FA; /* page background */
-  --color-surface: #FFFFFF; /* cards, panels */
+  --color-bg: #FFFFFF; /* page background */
+  --color-surface: #e6e6e6; /* cards, panels */
   --color-primary: #0B3D91; /* headings, links */
   --color-secondary: #2F6B7A; /* supporting UI */
   --color-accent: #6d82fe; /* primary CTA / highlights */
